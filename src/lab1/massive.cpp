@@ -2,26 +2,26 @@
 
 using namespace std;
 
-massive_class::massive_class() {
+Massive::Massive() {
     count = 0;
     elements = nullptr;
 }
 
-massive_class::massive_class(int num) {
+Massive::Massive(int num) {
     count = num;
     elements = new int[num];
     for (int i = 0; i < count; i++)
         elements[i] = 0;
 }
 
-massive_class::massive_class(const massive_class &other) {
+Massive::Massive(const Massive &other) {
     count = other.count;
     elements = new int[count];
     for (int i = 0; i < count; i++)
         elements[i] = other.elements[i];
 }
 
-massive_class &massive_class::operator=(const massive_class &other) noexcept {
+Massive &Massive::operator=(const Massive &other) noexcept {
     if (this == &other) {
         return *this;
     }
@@ -37,12 +37,12 @@ massive_class &massive_class::operator=(const massive_class &other) noexcept {
     return *this;
 }
 
-massive_class::~massive_class() {
+Massive::~Massive() {
     delete[] elements;
     count = -1;
 }
 
-void massive_class::show() {
+void Massive::show() {
     if (elements == nullptr) {
         cout << "Massive is empty\n";
         return;
@@ -55,7 +55,7 @@ void massive_class::show() {
     cout << endl;
 }
 
-void massive_class::show(int num) {
+void Massive::show(int num) {
     if (elements == nullptr) {
         cout << "Massive is empty\n";
         return;
@@ -67,7 +67,7 @@ void massive_class::show(int num) {
     cout << endl;
 }
 
-void massive_class::enter() {
+void Massive::enter() {
     if (elements == nullptr) {
         cout << "Massive is empty\n";
         return;
@@ -78,7 +78,7 @@ void massive_class::enter() {
     }
 }
 
-void massive_class::enter(int num) {
+void Massive::enter(int num) {
     if (elements == nullptr) {
         cout << "Massive is empty\n";
         return;
@@ -98,7 +98,7 @@ void massive_class::enter(int num) {
     }
 }
 
-void massive_class::add(int num) {
+void Massive::add(int num) {
     int *new_data = new int[count + 1];
 
     for (int i = 0; i < count; i++)
@@ -109,7 +109,7 @@ void massive_class::add(int num) {
     elements = new_data;
 }
 
-void massive_class::crossing(massive_class &mas1, massive_class &mas2) {
+void Massive::crossing(Massive &mas1, Massive &mas2) {
     if (mas1.elements == nullptr || mas2.elements == nullptr) {
         cout << "One of the massive is empty\n";
         return;

@@ -4,7 +4,7 @@ void menu() {
 
     char ch;
     int num_of_mas = 0;
-    massive_class *mas = nullptr;
+    Massive *mas = nullptr;
 
     while (ch != 'q') {
         system("clear");
@@ -23,15 +23,15 @@ void menu() {
     }
 }
 
-void options(char ch, massive_class *&mas, int &num_of_mas) {
+void options(char ch, Massive *&mas, int &num_of_mas) {
     if (ch == '1') {
         cout << "Enter the count of new massive\n";
         int count;
         cin >> count;
 
-        massive_class obj(count);
-        massive_class *new_mas;
-        new_mas = new massive_class[num_of_mas + 1];
+        Massive obj(count);
+        Massive *new_mas;
+        new_mas = new Massive[num_of_mas + 1];
 
         for (int i = 0; i < num_of_mas; i++)
             new_mas[i] = mas[i];
@@ -79,6 +79,15 @@ void options(char ch, massive_class *&mas, int &num_of_mas) {
         return;
     }
     if (ch == '5') {
-        return;
+        Massive *new_mas;
+        new_mas = new Massive[num_of_mas - 1];
+        for (int i = 0, j = 0; i < num_of_mas; j++, i++) {
+            if (i == ch2 - 1) i++;
+            if (i < num_of_mas)
+                new_mas[j] = mas[i];
+        }
+        delete[] mas;
+        mas = new_mas;
+        num_of_mas--;
     }
 }

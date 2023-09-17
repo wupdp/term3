@@ -2,17 +2,17 @@
 
 using namespace std;
 
-class massive_class {
+class Massive {
 public:
-    massive_class();
+    Massive();
 
-    explicit massive_class(int);
+    explicit Massive(int);
 
-    massive_class(const massive_class &other);
+    Massive(const Massive &other);
 
-    massive_class& operator=(const massive_class& other) noexcept;
+    Massive& operator=(const Massive& other) noexcept;
 
-    ~massive_class();
+    ~Massive();
 
     void show();
 
@@ -24,7 +24,7 @@ public:
 
     void add(int);
 
-    void crossing(massive_class &, massive_class &);
+    void crossing(Massive &, Massive &);
 
 private:
     int count;
