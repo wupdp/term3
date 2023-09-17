@@ -87,8 +87,8 @@ void massive_class::enter(int num) {
         int *new_data = new int[num];
         for (int i = 0; i < count && i < num; i++)
             new_data[i] = elements[i];
+        delete[] elements;
         elements = new_data;
-        delete[] new_data;
         count = num;
     }
 
@@ -99,21 +99,14 @@ void massive_class::enter(int num) {
 }
 
 void massive_class::add(int num) {
-    int *new_data = new int[++count];
+    int *new_data = new int[count + 1];
 
-    if (elements == nullptr) {
-        new_data[0] = num;
-        elements = new_data;
-        delete[] new_data;
-        return;
-    }
-
-    for (int i = 0; i < count - 1; i++)
+    for (int i = 0; i < count; i++)
         new_data[i] = elements[i];
-    new_data[count - 1] = num;
-
+    new_data[count] = num;
+    count++;
+    delete[] elements;
     elements = new_data;
-    delete[] new_data;
 }
 
 void massive_class::crossing(massive_class &mas1, massive_class &mas2) {
