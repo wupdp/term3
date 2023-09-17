@@ -10,6 +10,8 @@ public:
 
     massive_class(const massive_class &other);
 
+    massive_class& operator=(const massive_class& other) noexcept;
+
     ~massive_class();
 
     void show();

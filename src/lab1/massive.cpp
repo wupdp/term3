@@ -10,19 +10,36 @@ massive_class::massive_class() {
 massive_class::massive_class(int num) {
     count = num;
     elements = new int[num];
-    for(int i = 0; i < count; i++)
+    for (int i = 0; i < count; i++)
         elements[i] = 0;
 }
 
 massive_class::massive_class(const massive_class &other) {
     count = other.count;
     elements = new int[count];
-    for (int i = 0; i < count; ++i)
+    for (int i = 0; i < count; i++)
         elements[i] = other.elements[i];
+}
+
+massive_class &massive_class::operator=(const massive_class &other) noexcept {
+    if (this == &other) {
+        return *this;
+    }
+
+    delete[] elements;
+
+    count = other.count;
+    elements = new int[count];
+    for (int i = 0; i < count; i++) {
+        elements[i] = other.elements[i];
+    }
+
+    return *this;
 }
 
 massive_class::~massive_class() {
     delete[] elements;
+    count = -1;
 }
 
 void massive_class::show() {

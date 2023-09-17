@@ -28,15 +28,17 @@ void options(char ch, massive_class *&mas, int &num_of_mas) {
         cout << "Enter the count of new massive\n";
         int count;
         cin >> count;
+
         massive_class obj(count);
+        massive_class *new_mas;
+        new_mas = new massive_class[num_of_mas + 1];
 
-        auto *new_mas = new massive_class[++num_of_mas]; //пример комментария example for you
-
-        for (int i = 0; i < num_of_mas - 1; i++)
+        for (int i = 0; i < num_of_mas; i++)
             new_mas[i] = mas[i];
-        new_mas[num_of_mas - 1] = obj;
-        mas = new_mas;
 
+        new_mas[num_of_mas] = obj;
+        mas = new_mas;
+        num_of_mas++;
         return;
     }
 
