@@ -1,15 +1,20 @@
 #include "menu_functions.h"
 
 void menu() {
-    system("clear");
+
     char ch;
     int num_of_mas = 0;
     massive_class *mas = nullptr;
 
     while (ch != 'q') {
-        cout
-                << "\t\tMENU\n\tEnter the choice\n\t1. Create massive\n\t2. Enter/rewrite the massive\n\t3. Show massive\n\t4. Add number to the massive\n"
-                   "\t5. Delete the massive\n";
+        system("clear");
+        cout << "\t\tMENU\n"
+                "\tEnter the choice\n"
+                "\t1. Create massive\n"
+                "\t2. Enter/rewrite the massive\n"
+                "\t3. Show massive\n"
+                "\t4. Add number to the massive\n"
+                "\t5. Delete the massive\n";
         cin >> ch;
         if (ch == 'q')
             break;
@@ -18,14 +23,14 @@ void menu() {
     }
 }
 
-void options(char ch, massive_class *mas, int &num_of_mas) {
+void options(char ch, massive_class *&mas, int &num_of_mas) {
     if (ch == '1') {
         cout << "Enter the count of new massive\n";
         int count;
         cin >> count;
         massive_class obj(count);
 
-        auto *new_mas = new massive_class[++num_of_mas];
+        auto *new_mas = new massive_class[++num_of_mas]; //пример комментария example for you
 
         for (int i = 0; i < num_of_mas - 1; i++)
             new_mas[i] = mas[i];
@@ -34,13 +39,41 @@ void options(char ch, massive_class *mas, int &num_of_mas) {
 
         return;
     }
+
+    int ch2, ch3;
+    cout << "Enter the number of massive you want to work with:\n";
+    cin >> ch2;
+
+    if (ch2 < 1 || ch2 > num_of_mas) {
+        cout << "There are no such a massive\n";
+        return;
+    }
+
     if (ch == '2') {
+        cout << "Do you want to change the size??\n"
+                "Yes - enter the size\n"
+                "No - enter 0\n";
+        cin >> ch3;
+        if (ch3 == 0)
+            mas[ch2 - 1].enter();
+        if (ch3 > 0)
+            mas[ch2 - 1].enter(ch3);
         return;
     }
     if (ch == '3') {
+        cout << "Enter how much elements you want to see?\n"
+                "All - enter 0\n";
+        cin >> ch3;
+        if (ch3 == 0)
+            mas[ch2 - 1].show();
+        if (ch3 > 0)
+            mas[ch2 - 1].show(ch3);
         return;
     }
     if (ch == '4') {
+        cout << "Enter the number you want to add:\n";
+        cin >> ch3;
+        mas[ch2 - 1].add(ch3);
         return;
     }
     if (ch == '5') {

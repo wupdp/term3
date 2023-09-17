@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
 
 class massive_class {
@@ -6,6 +7,8 @@ public:
     massive_class();
 
     explicit massive_class(int);
+
+    massive_class(const massive_class &other);
 
     ~massive_class();
 
