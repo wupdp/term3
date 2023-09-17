@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+
 class massive_class {
 public:
     massive_class();

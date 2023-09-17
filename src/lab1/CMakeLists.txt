@@ -6,4 +6,5 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(lab1 main.cpp
         massive.cpp
         massive.h
-        menu_functions.cpp)
+        menu_functions.cpp
+        menu_functions.h)
