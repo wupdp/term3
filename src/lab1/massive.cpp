@@ -115,10 +115,24 @@ void Massive::crossing(Massive &mas1, Massive &mas2) {
         return;
     }
 
-    for (int i = 0; i < mas1.count; i++) {
-        for (int j = 0; j < mas2.count; j++) {
-            if (mas1.elements[i] == mas2.elements[j])
-                elements[i] = mas1.elements[i];
+    delete[] elements;
+
+    elements = new int[mas1.count];
+    count = 0;
+
+    for (int i = 0; i < mas1.count && i < mas2.count; i++) {
+        if (mas1.elements[i] == mas2.elements[i]) {
+            elements[count] = mas1.elements[i];
+            count++;
         }
     }
+
+    int *new_mas;
+    new_mas = new int[count];
+
+    for (int j = 0; j < count; j++)
+        new_mas[j] = elements[j];
+
+    delete[] elements;
+    elements = new_mas;
 }
