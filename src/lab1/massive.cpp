@@ -47,7 +47,6 @@ void Massive::show() {
         cout << "Massive is empty\n";
         return;
     }
-
     cout << "Massive:\n";
     for (int i = 0; i < count; i++) {
         cout << elements[i] << " ";
@@ -119,11 +118,21 @@ void Massive::crossing(Massive &mas1, Massive &mas2) {
 
     elements = new int[mas1.count];
     count = 0;
+    sort(mas1.elements, mas1.elements + mas1.count);
+    sort(mas2.elements, mas2.elements + mas2.count);
+    int i = 0;
+    int j = 0;
 
-    for (int i = 0; i < mas1.count && i < mas2.count; i++) {
-        if (mas1.elements[i] == mas2.elements[i]) {
+    while (i < mas1.count && j < mas2.count) {
+        if (mas1.elements[i] < mas2.elements[j])
+            i++;
+        else if (mas1.elements[i] > mas2.elements[j])
+            j++;
+        else {
             elements[count] = mas1.elements[i];
             count++;
+            i++;
+            j++;
         }
     }
 
