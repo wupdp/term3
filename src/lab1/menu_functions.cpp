@@ -6,7 +6,7 @@ void menu() {
     int num_of_mas = 0;
     Massive *mas = nullptr;
 
-    while (ch != 'q') {
+    while (ch != 'q') {                     //Цикл меню
         system("clear");
         cout << "\t\tMENU\n"
                 "\tEnter the choice\n"
@@ -24,7 +24,7 @@ void menu() {
     }
 }
 
-void options(char ch, Massive *&mas, int &num_of_mas) {
+void options(char ch, Massive *&mas, int &num_of_mas) {         //Опции меню
     if (ch == '1') {
         cout << "Enter the count of new massive\n";
         int count;
@@ -39,9 +39,10 @@ void options(char ch, Massive *&mas, int &num_of_mas) {
 
         new_mas[num_of_mas] = obj;
         delete[] mas;
-
         mas = new_mas;
+
         num_of_mas++;
+
         return;
     }
 
@@ -49,11 +50,13 @@ void options(char ch, Massive *&mas, int &num_of_mas) {
 
     if (ch == '6') {
         Massive obj;
+
         cout << "Enter the masssives you want to cross:\n";
         cin >> ch3 >> ch2;
         if (ch2 > num_of_mas || ch3 > num_of_mas) {
             cout << "No such massive, please retry\n";
         }
+
         obj.crossing(mas[ch3 - 1], mas[ch2 - 1]);
 
         Massive *new_mas;
@@ -65,10 +68,13 @@ void options(char ch, Massive *&mas, int &num_of_mas) {
         new_mas[num_of_mas] = obj;
         delete[] mas;
         mas = new_mas;
+
         num_of_mas++;
+
         cout << "Crossed massives:\n";
         mas[ch2 - 1].show();
         mas[ch3 - 1].show();
+
         cout << "The crossing mas now is number " << num_of_mas << ":\n";
         mas[num_of_mas - 1].show();
 
@@ -80,6 +86,7 @@ void options(char ch, Massive *&mas, int &num_of_mas) {
 
     if (ch2 < 1 || ch2 > num_of_mas) {
         cout << "There are no such a massive\n";
+
         return;
     }
 
@@ -88,9 +95,11 @@ void options(char ch, Massive *&mas, int &num_of_mas) {
                 "Yes - enter the size\n"
                 "No - enter 0\n";
         cin >> ch3;
+
         if (ch3 == 0) {
             mas[ch2 - 1].enter();
         }
+
         if (ch3 > 0) {
             mas[ch2 - 1].enter(ch3);
         }
@@ -100,31 +109,38 @@ void options(char ch, Massive *&mas, int &num_of_mas) {
         cout << "Enter how much elements you want to see?\n"
                 "All - enter 0\n";
         cin >> ch3;
-        if (ch3 == 0) {
+
+        if (ch3 == 0)
             mas[ch2 - 1].show();
-        }
-        if (ch3 > 0) {
+
+        if (ch3 > 0)
             mas[ch2 - 1].show(ch3);
-        }
+
         return;
     }
     if (ch == '4') {
         cout << "Enter the number you want to add:\n";
         cin >> ch3;
+
         mas[ch2 - 1].add(ch3);
+
         return;
     }
     if (ch == '5') {
         Massive *new_mas;
         new_mas = new Massive[num_of_mas - 1];
+
         for (int i = 0, j = 0; i < num_of_mas; j++, i++) {
             if (i == ch2 - 1) i++;
+
             if (i < num_of_mas) {
                 new_mas[j] = mas[i];
             }
         }
+
         delete[] mas;
         mas = new_mas;
+
         num_of_mas--;
     }
 }
