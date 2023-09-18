@@ -139,8 +139,8 @@ void Massive::crossing(Massive &mas1, Massive &mas2) {
     int *new_mas;
     new_mas = new int[count];
 
-    for (int j = 0; j < count; j++)
-        new_mas[j] = elements[j];
+    for (int k = 0; k < count; k++)
+        new_mas[k] = elements[k];
 
     delete[] elements;
     elements = new_mas;

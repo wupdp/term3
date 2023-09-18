@@ -51,7 +51,9 @@ void options(char ch, Massive *&mas, int &num_of_mas) {
         Massive obj;
         cout << "Enter the masssives you want to cross:\n";
         cin >> ch3 >> ch2;
-
+        if (ch2 > num_of_mas || ch3 > num_of_mas) {
+            cout << "No such massive, please retry\n";
+        }
         obj.crossing(mas[ch3 - 1], mas[ch2 - 1]);
 
         Massive *new_mas;
