@@ -7,4 +7,5 @@ add_executable(lab1 main.cpp
         massive.cpp
         massive.h
         menu_functions.cpp
-        menu_functions.h)
+        menu_functions.h
+        header.h)

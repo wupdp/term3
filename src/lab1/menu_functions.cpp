@@ -46,7 +46,7 @@ void options(char ch, Massive *&mas, int &num_of_mas) {         //Опции м�
         return;
     }
 
-    int ch2, ch3;
+    int ch2, ch3, ch4;
 
     if (ch == '6') {
         Massive obj;
@@ -55,6 +55,7 @@ void options(char ch, Massive *&mas, int &num_of_mas) {         //Опции м�
         cin >> ch3 >> ch2;
         if (ch2 > num_of_mas || ch3 > num_of_mas) {
             cout << "No such massive, please retry\n";
+            return;
         }
 
         obj.crossing(mas[ch3 - 1], mas[ch2 - 1]);
@@ -66,14 +67,22 @@ void options(char ch, Massive *&mas, int &num_of_mas) {         //Опции м�
             new_mas[i] = mas[i];
 
         new_mas[num_of_mas] = obj;
+
         delete[] mas;
         mas = new_mas;
 
         num_of_mas++;
 
+        cout << "Enter the 3th masssive you want to cross:\n";
+        cin >> ch4;
+
+        obj.crossing(mas[ch4 - 1], mas[num_of_mas - 1]);
+        mas[num_of_mas - 1] = obj;
+
         cout << "Crossed massives:\n";
         mas[ch2 - 1].show();
         mas[ch3 - 1].show();
+        mas[ch4 - 1].show();
 
         cout << "The crossing mas now is number " << num_of_mas << ":\n";
         mas[num_of_mas - 1].show();
