@@ -1,3 +1,3 @@
-/home/aveira/Рабочий стол/CPP_labs/src/lab1/cmake-build-debug/CMakeFiles/lab1.dir
-/home/aveira/Рабочий стол/CPP_labs/src/lab1/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/aveira/Рабочий стол/CPP_labs/src/lab1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/wupdp/Рабочий стол/С_СPP labs/CPP_labs/src/lab1/cmake-build-debug/CMakeFiles/lab1.dir
+/home/wupdp/Рабочий стол/С_СPP labs/CPP_labs/src/lab1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/wupdp/Рабочий стол/С_СPP labs/CPP_labs/src/lab1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

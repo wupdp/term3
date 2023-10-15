@@ -1,4 +1,4 @@
-#include "menu_functions.h"
+#include "headers/menu_functions.h"
 
 void menu() {
 
@@ -7,7 +7,6 @@ void menu() {
     Massive *mas = nullptr;
 
     while (ch != 'q') {                     //Цикл меню
-        system("clear");
         cout << "\t\tMENU\n"
                 "\tEnter the choice\n"
                 "\t1. Create massive\n"
@@ -17,11 +16,14 @@ void menu() {
                 "\t5. Delete the massive\n"
                 "\t6. Cross the massives\n";
         cin >> ch;
-        if (ch == 'q')
+        if (ch == 'q') {
             break;
-        if (ch >= 49 && ch <= 54)
+        }
+        if (ch >= 49 && ch <= 54) {
             options(ch, mas, num_of_mas);
+        }
     }
+    system("clear");
 }
 
 void options(char ch, Massive *&mas, int &num_of_mas) {         //Опции меню
@@ -49,16 +51,19 @@ void options(char ch, Massive *&mas, int &num_of_mas) {         //Опции м�
     int ch2, ch3, ch4;
 
     if (ch == '6') {
-        Massive obj;
+        Massive obj, obj1(5), obj2(5);
 
-        cout << "Enter the masssives you want to cross:\n";
-        cin >> ch3 >> ch2;
-        if (ch2 > num_of_mas || ch3 > num_of_mas) {
+        obj1.enter();
+        obj2.enter();
+
+        /*cout << "Enter the masssives you want to cross:\n";
+        cin >> ch3 >> ch2;*/
+       /* if (ch2 > num_of_mas || ch3 > num_of_mas) {
             cout << "No such massive, please retry\n";
             return;
-        }
+        }*/
 
-        obj.crossing(mas[ch3 - 1], mas[ch2 - 1]);
+        obj.crossing(obj1, obj2);
 
         Massive *new_mas;
         new_mas = new Massive[num_of_mas + 1];
@@ -72,20 +77,22 @@ void options(char ch, Massive *&mas, int &num_of_mas) {         //Опции м�
         mas = new_mas;
 
         num_of_mas++;
-
+/*
         cout << "Enter the 3th masssive you want to cross:\n";
         cin >> ch4;
 
         obj.crossing(mas[ch4 - 1], mas[num_of_mas - 1]);
         mas[num_of_mas - 1] = obj;
-
-        cout << "Crossed massives:\n";
-        mas[ch2 - 1].show();
-        mas[ch3 - 1].show();
-        mas[ch4 - 1].show();
-
+*/
+       // cout << "Crossed massives:\n";
+       // mas[ch2 - 1].show();
+       // mas[ch3 - 1].show();
+       // mas[ch4 - 1].show();
+        mas[num_of_mas - 1] = obj;
+        cout << endl;
         cout << "The crossing mas now is number " << num_of_mas << ":\n";
         mas[num_of_mas - 1].show();
+        cout << endl;
 
         return;
     }
