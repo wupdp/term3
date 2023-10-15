@@ -110,7 +110,7 @@ std::istream& operator>>(std::istream& is, String& str) {
 
 String String::substring(int start_index, int end_index) {
     if (start_index < 0 || start_index >= static_cast<int>(size) || end_index <= start_index || end_index >= static_cast<int>(size))
-        return String();
+        return String();    //Проверка на верный размер
 
     int sub_length = end_index - start_index + 1;
     char* sub_data = new char[sub_length + 1];
