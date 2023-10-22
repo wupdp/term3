@@ -1,14 +1,25 @@
-//
-// Created by wupdp on 23.10.23.
-//
+#ifndef PARTY_MEMBER_H
+#define PARTY_MEMBER_H
 
-#ifndef LAB3_PARTY_MEMBER_H
-#define LAB3_PARTY_MEMBER_H
+#include "person.h"
+#include <string>
+#include <vector>
 
+class PartyMember : public Person {
+private:
+    std::string party_name;
+    std::vector<std::string> biography;
 
-class party_member {
+public:
+    PartyMember(const std::string& name, int birth_year, const std::string& party_name, const std::vector<std::string>& biography);
 
+    std::string get_party_name() const;
+    void set_party_name(const std::string& party_name);
+
+    std::vector<std::string> get_biography() const;
+    void set_biography(const std::vector<std::string>& biography);
+
+    void display_info() const;
 };
 
-
-#endif //LAB3_PARTY_MEMBER_H
+#endif  // PARTY_MEMBER_H
