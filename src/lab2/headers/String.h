@@ -13,7 +13,10 @@ public:
 
     String& operator=(const String& other);
     String operator+(const String& other) const;
+    const String operator+(const char*) const;
+    friend String operator+(const char* str1, const String& str2);
     String& operator+=(const String& other);
+    const String& operator+=(const char*);
     String& operator++();
     String operator++(int);
     String& operator--();

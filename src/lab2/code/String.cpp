@@ -45,12 +45,12 @@ String& String::operator+=(const String& other) {
 
 String& String::operator++() {
     // Реализация префиксного инкремента
-    char* newData = new char[size + 2];
-    std::strcpy(newData, data);
-    newData[size] = ' ';
-    newData[size + 1] = '\0';
+    char* new_data = new char[size + 2];
+    std::strcpy(new_data, data);
+    new_data[size] = ' ';
+    new_data[size + 1] = '\0';
     delete[] data;
-    data = newData;
+    data = new_data;
     size++;
     return *this;
 }
@@ -65,11 +65,11 @@ String String::operator++(int) {
 String& String::operator--() {
     // Реализация префиксного декремента
     if (size > 0) {
-        char* newData = new char[size];
-        std::strncpy(newData, data, size - 1);
-        newData[size - 1] = '\0';
+        char* new_data = new char[size];
+        std::strncpy(new_data, data, size - 1);
+        new_data[size - 1] = '\0';
         delete[] data;
-        data = newData;
+        data = new_data;
         size--;
     }
     return *this;
@@ -118,4 +118,17 @@ String String::substring(int start_index, int end_index) {
     sub_data[sub_length] = '\0';
 
     return String(sub_data);
+}
+
+const String String::operator+(const char * str) const {
+    return (*this) + (const String)str;
+}
+
+const String &String::operator+=(const char *str) {
+    *this = *this + (String)str;
+    return *this;
+}
+
+String operator+(const char *str1, const String &str2) {
+    return str2 + (String)str1;
 }

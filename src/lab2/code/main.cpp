@@ -11,7 +11,7 @@ int main(){
     getchar();
 
     cout << "++str1 + str2\n";
-    result_str = ++str1 + str2;
+    result_str = "sedgresg" + ++str1 + str2+"250501";
     cout << result_str << endl;
     getchar();
 
