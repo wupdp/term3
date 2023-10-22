@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-class Teacher : public Person {
+class Teacher : virtual public Person {
 private:
     std::string specialty;
     std::vector<std::string> publications;

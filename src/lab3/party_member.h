@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-class PartyMember : public Person {
+class PartyMember : virtual public Person {
 private:
     std::string party_name;
     std::vector<std::string> biography;
