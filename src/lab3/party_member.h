@@ -6,20 +6,21 @@
 #include <vector>
 
 class PartyMember : virtual public Person {
-private:
-    std::string party_name;
-    std::vector<std::string> biography;
+protected:
+    string party_name;
+    vector<string> biography;
 
 public:
-    PartyMember(const std::string& name, int birth_year, const std::string& party_name, const std::vector<std::string>& biography);
+    PartyMember();
+    PartyMember(const string& name, int age, const string& party_name, const vector<string>& biography);
 
-    std::string get_party_name() const;
-    void set_party_name(const std::string& party_name);
+    string get_party_name() const;
+    void set_party_name(const string& party_name);
 
-    std::vector<std::string> get_biography() const;
-    void set_biography(const std::vector<std::string>& biography);
+    vector<string> get_biography() const;
+    void set_biography(const vector<string>& biography);
 
-    void display_info() const;
+    void display_info() const override;
 };
 
 #endif  // PARTY_MEMBER_H

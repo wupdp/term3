@@ -2,22 +2,24 @@
 #define PERSON_H
 
 #include <string>
+using namespace std;
 
 class Person {
-private:
-    std::string name;
-    int birth_year;
+protected:
+    string name;
+    int age;
 
 public:
-    Person(const std::string& name, int birth_year);
+    Person();
+    Person(const string& name, int age);
 
-    std::string get_name() const;
-    void set_name(const std::string& name);
+    string get_name() const;
+    void set_name(const string& name);
 
     int get_birth_year() const;
     void set_birth_year(int birth_year);
 
-    void display_info() const;
+    virtual void display_info() const;
 };
 
 #endif  // PERSON_H

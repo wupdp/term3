@@ -6,20 +6,21 @@
 #include <vector>
 
 class Teacher : virtual public Person {
-private:
-    std::string specialty;
-    std::vector<std::string> publications;
+protected:
+    string specialty;
+    vector<string> publications;
 
 public:
-    Teacher(const std::string& name, int birth_year, const std::string& specialty, const std::vector<std::string>& publications);
+    Teacher();
+    Teacher(const string& name, int age, const string& specialty, const vector<string>& publications);
 
-    std::string get_specialty() const;
-    void set_specialty(const std::string& specialty);
+    string get_specialty() const;
+    void set_specialty(const string& specialty);
 
-    std::vector<std::string> get_publications() const;
-    void set_publications(const std::vector<std::string>& publications);
+    vector<string> get_publications() const;
+    void set_publications(const vector<string>& publications);
 
-    void display_info() const;
+    void display_info() const override;
 };
 
 #endif  // TEACHER_H

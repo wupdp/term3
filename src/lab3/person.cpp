@@ -1,26 +1,35 @@
 #include "person.h"
 #include <iostream>
 
-Person::Person(const std::string& name, int birth_year)
-        : name(name), birth_year(birth_year) {}
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "OCUnusedGlobalDeclarationInspection"
+Person::Person() {
+    name = "";
+    age = 0;
+}
 
-std::string Person::get_name() const {
+Person::Person(const string& name, int age)
+        : name(name), age(age) {}
+
+string Person::get_name() const {
     return name;
 }
 
-void Person::set_name(const std::string& name) {
-    this->name = name;
+void Person::set_name(const string& text) {
+    this->name = text;
 }
 
 int Person::get_birth_year() const {
-    return birth_year;
+    return age;
 }
 
-void Person::set_birth_year(int birth_year) {
-    this->birth_year = birth_year;
+void Person::set_birth_year(int year) {
+    this->age = year;
 }
 
 void Person::display_info() const {
     std::cout << "Name: " << name << std::endl;
-    std::cout << "Birth Year: " << birth_year << std::endl;
+    std::cout << "Birth Year: " << age << std::endl;
 }
+
+#pragma clang diagnostic pop

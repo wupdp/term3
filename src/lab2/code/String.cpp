@@ -4,15 +4,15 @@
 String::String() : data(nullptr), size(0) {}
 
 String::String(const char* str) {
-    size = std::strlen(str);
+    size = strlen(str);
     data = new char[size + 1];
-    std::strcpy(data, str);
+    strcpy(data, str);
 }
 
 String::String(const String& other) {
     size = other.size;
     data = new char[size + 1];
-    std::strcpy(data, other.data);
+    strcpy(data, other.data);
 }
 
 String::~String() {
@@ -24,7 +24,7 @@ String& String::operator=(const String& other) {
         delete[] data;
         size = other.size;
         data = new char[size + 1];
-        std::strcpy(data, other.data);
+        strcpy(data, other.data);
     }
     return *this;
 }
@@ -33,8 +33,8 @@ String String::operator+(const String& other) const {
     String result;
     result.size = size + other.size;
     result.data = new char[result.size + 1];
-    std::strcpy(result.data, data);
-    std::strcat(result.data, other.data);
+    strcpy(result.data, data);
+    strcat(result.data, other.data);
     return result;
 }
 
@@ -46,7 +46,7 @@ String& String::operator+=(const String& other) {
 String& String::operator++() {
     // Реализация префиксного инкремента
     char* new_data = new char[size + 2];
-    std::strcpy(new_data, data);
+    strcpy(new_data, data);
     new_data[size] = ' ';
     new_data[size + 1] = '\0';
     delete[] data;
@@ -66,7 +66,7 @@ String& String::operator--() {
     // Реализация префиксного декремента
     if (size > 0) {
         char* new_data = new char[size];
-        std::strncpy(new_data, data, size - 1);
+        strncpy(new_data, data, size - 1);
         new_data[size - 1] = '\0';
         delete[] data;
         data = new_data;

@@ -1,30 +1,36 @@
 #include "teacher.h"
 #include <iostream>
 
-Teacher::Teacher(const std::string& name, int birth_year, const std::string& specialty, const std::vector<std::string>& publications)
-        : Person(name, birth_year), specialty(specialty), publications(publications) {}
+Teacher::Teacher() {
+    name = "";
+    age = 0;
+    specialty = "";
+}
 
-std::string Teacher::get_specialty() const {
+Teacher::Teacher(const string& name, int age, const string& specialty, const vector<string>& publications)
+        : Person(name, age), specialty(specialty), publications(publications) {}
+
+string Teacher::get_specialty() const {
     return specialty;
 }
 
-void Teacher::set_specialty(const std::string& specialty) {
-    this->specialty = specialty;
+void Teacher::set_specialty(const string& text) {
+    this->specialty = text;
 }
 
-std::vector<std::string> Teacher::get_publications() const {
+vector<string> Teacher::get_publications() const {
     return publications;
 }
 
-void Teacher::set_publications(const std::vector<std::string>& publications) {
-    this->publications = publications;
+void Teacher::set_publications(const vector<string>& text) {
+    this->publications = text;
 }
 
 void Teacher::display_info() const {
     Person::display_info();
-    std::cout << "Specialty: " << specialty << std::endl;
-    std::cout << "Publications: " << std::endl;
+    cout << "Specialty: " << specialty << endl;
+    cout << "Publications: " << endl;
     for (const auto& publication : publications) {
-        std::cout << "- " << publication << std::endl;
+        cout << "- " << publication << endl;
     }
 }
