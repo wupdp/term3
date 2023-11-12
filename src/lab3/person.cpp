@@ -32,4 +32,10 @@ void Person::display_info() const {
     std::cout << "Birth Year: " << age << std::endl;
 }
 
+ostream& operator<<(ostream& os, const Person& person) {
+    os << "Name: " << person.name << endl;
+    os << "Age: " << person.age << endl;
+    return os;
+}
+
 #pragma clang diagnostic pop

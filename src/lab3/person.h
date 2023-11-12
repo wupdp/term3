@@ -1,5 +1,4 @@
-#ifndef PERSON_H
-#define PERSON_H
+#pragma once
 
 #include <string>
 using namespace std;
@@ -20,6 +19,5 @@ public:
     void set_birth_year(int birth_year);
 
     virtual void display_info() const;
+    friend ostream& operator<<(ostream& os, const Person& person);
 };
-
-#endif  // PERSON_H

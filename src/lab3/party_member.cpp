@@ -32,3 +32,16 @@ void PartyMember::display_info() const {
         cout << "- " << entry << endl;
     }
 }
+
+ostream& operator<<(ostream& os, const PartyMember& party_member) {
+    os << "Name: " << party_member.name << endl;
+    os << "Age: " << party_member.age << endl;
+    os << "Party Name: " << party_member.party_name << endl;
+    os << "Biography: ";
+    for (const auto& info : party_member.biography) {
+        os << endl << "\t"<< info;
+    }
+    os << endl;
+
+    return os;
+}

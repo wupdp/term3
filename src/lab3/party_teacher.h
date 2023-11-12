@@ -1,13 +1,7 @@
-//
-// Created by wupdp on 23.10.23.
-//
-
-#ifndef LAB3_PARTY_TEACHER_H
-#define LAB3_PARTY_TEACHER_H
+#pragma once
 
 #include "party_member.h"
 #include "teacher.h"
-
 
 class PartyTeacher : virtual public Teacher, virtual public PartyMember {
 private:
@@ -18,9 +12,7 @@ public:
                  const string &party_name, const vector<string> &biography, const string &party_work);
 
     void display_info() const override;
-
-
+    void set_work(const string& party_work);
+    string get_work();
+    friend ostream& operator<<(ostream& os, const PartyTeacher& partyTeacher);
 };
-
-
-#endif //LAB3_PARTY_TEACHER_H

@@ -1,6 +1,3 @@
-//
-// Created by wupdp on 23.10.23.
-//
 #include "party_teacher.h"
 #include <iostream>
 
@@ -24,4 +21,34 @@ void PartyTeacher::display_info() const {
         cout << "- " << publication << endl;
     }
     cout << "Role in party: " << party_work << endl;
+}
+
+void PartyTeacher::set_work(const string& work) {
+    this->party_work = work;
+}
+
+string PartyTeacher::get_work() {
+    return party_work;
+}
+
+ostream& operator<<(ostream& os, const PartyTeacher& partyTeacher) {
+    os << "Name: " << partyTeacher.name << endl;
+    os << "Age: " << partyTeacher.age << endl;
+    os << "Specialty: " << partyTeacher.specialty << endl;
+
+    os << "Publications: ";
+    for (const auto& publication : partyTeacher.publications) {
+        os << publication << " ";
+    }
+    os << endl;
+    os << "Party Name: " << partyTeacher.party_name << endl;
+    os << "Biography: ";
+    for (const auto& info : partyTeacher.biography) {
+        os << endl << "\t"<< info;
+    }
+    os << endl;
+
+    os << "Party Work: " << partyTeacher.party_work << endl;
+
+    return os;
 }

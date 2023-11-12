@@ -1,5 +1,4 @@
-#ifndef PARTY_MEMBER_H
-#define PARTY_MEMBER_H
+#pragma once
 
 #include "person.h"
 #include <string>
@@ -21,6 +20,5 @@ public:
     void set_biography(const vector<string>& biography);
 
     void display_info() const override;
+    friend ostream& operator<<(ostream& os, const PartyMember& partyMember);
 };
-
-#endif  // PARTY_MEMBER_H

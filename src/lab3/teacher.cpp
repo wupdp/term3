@@ -34,3 +34,16 @@ void Teacher::display_info() const {
         cout << "- " << publication << endl;
     }
 }
+
+ostream& operator<<(ostream& os, const Teacher& teacher) {
+    os << "Name: " << teacher.name << endl;
+    os << "Age: " << teacher.age << endl;
+    os << "Specialty: " << teacher.specialty << endl;
+
+    os << "Publications: ";
+    for (const auto& publication : teacher.publications) {
+        os << publication << " ";
+    }
+    os << endl;
+    return os;
+}

@@ -1,5 +1,4 @@
-#ifndef TEACHER_H
-#define TEACHER_H
+#pragma once
 
 #include "person.h"
 #include <string>
@@ -21,6 +20,5 @@ public:
     void set_publications(const vector<string>& publications);
 
     void display_info() const override;
+    friend ostream& operator<<(ostream& os, const Teacher& teacher);
 };
-
-#endif  // TEACHER_H
