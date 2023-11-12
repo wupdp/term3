@@ -4,12 +4,13 @@ project(lab3)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(lab3 main.cpp
-        person.h
-        teacher.h
-        party_member.cpp
-        party_member.h
-        person.cpp
-        teacher.cpp
-        party_teacher.cpp
-        party_teacher.h
+        headers/person.h
+        headers/teacher.h
+        classes/party_member.cpp
+        headers/party_member.h
+        classes/person.cpp
+        classes/teacher.cpp
+        classes/party_teacher.cpp
+        headers/party_teacher.h
+        headers/header.h
 )

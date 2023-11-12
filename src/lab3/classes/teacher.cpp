@@ -1,4 +1,4 @@
-#include "teacher.h"
+#include "../headers/teacher.h"
 #include <iostream>
 
 Teacher::Teacher() {
@@ -46,4 +46,8 @@ ostream& operator<<(ostream& os, const Teacher& teacher) {
     }
     os << endl;
     return os;
+}
+
+Teacher::~Teacher() {
+    publications.clear();
 }

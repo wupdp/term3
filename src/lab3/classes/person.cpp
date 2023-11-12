@@ -1,4 +1,4 @@
-#include "person.h"
+#include "../headers/person.h"
 #include <iostream>
 
 #pragma clang diagnostic push
@@ -19,11 +19,11 @@ void Person::set_name(const string& text) {
     this->name = text;
 }
 
-int Person::get_birth_year() const {
+int Person::get_age() const {
     return age;
 }
 
-void Person::set_birth_year(int year) {
+void Person::set_age(int year) {
     this->age = year;
 }
 
@@ -36,6 +36,9 @@ ostream& operator<<(ostream& os, const Person& person) {
     os << "Name: " << person.name << endl;
     os << "Age: " << person.age << endl;
     return os;
+}
+
+Person::~Person() {
 }
 
 #pragma clang diagnostic pop

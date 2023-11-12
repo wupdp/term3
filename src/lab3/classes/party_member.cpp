@@ -1,4 +1,4 @@
-#include "party_member.h"
+#include "../headers/party_member.h"
 #include <iostream>
 
 PartyMember::PartyMember() {
@@ -44,4 +44,8 @@ ostream& operator<<(ostream& os, const PartyMember& party_member) {
     os << endl;
 
     return os;
+}
+
+PartyMember::~PartyMember() {
+    biography.clear();
 }

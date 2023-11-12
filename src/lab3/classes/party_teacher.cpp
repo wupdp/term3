@@ -1,4 +1,4 @@
-#include "party_teacher.h"
+#include "../headers/party_teacher.h"
 #include <iostream>
 
 PartyTeacher::PartyTeacher() {
@@ -51,4 +51,9 @@ ostream& operator<<(ostream& os, const PartyTeacher& partyTeacher) {
     os << "Party Work: " << partyTeacher.party_work << endl;
 
     return os;
+}
+
+PartyTeacher::~PartyTeacher() {
+    biography.clear();
+    publications.clear();
 }

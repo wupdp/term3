@@ -1,24 +1,23 @@
-#include "party_teacher.h"
-#include "iostream"
-//TODO перегрузить операторы
-//TODO
-#define NAME "Merlin Monro"
-#define AGE 29
-#define SPEC "Doctor of Science"
-#define PUBLs {"SW1", "SW2", "SW3"}
-#define PARTY "CPSU"
-#define BIO {"Borned in Shchuchin", "Studied at BSUIR"}
-#define WORK "Agitator"
+#include "headers/header.h"
+
 
 int main() {
     PartyTeacher woman;
+    Person man;
+    man.set_name("Albert Einstein");
+    man.set_age(145);
+
+    cout << man << endl;
+
     woman.set_biography(BIO);
-    woman.set_birth_year(AGE);
+    woman.set_age(AGE);
     woman.set_specialty(SPEC);
     woman.set_publications(PUBLs);
     woman.set_name(NAME);
     woman.set_party_name(PARTY);
-    woman.set_work("The member");
+    woman.set_work(WORK);
+
     std::cout << woman;
+
     return 0;
 }

@@ -12,6 +12,7 @@ protected:
 public:
     Teacher();
     Teacher(const string& name, int age, const string& specialty, const vector<string>& publications);
+    ~Teacher();
 
     string get_specialty() const;
     void set_specialty(const string& specialty);
