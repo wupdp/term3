@@ -1,4 +1,4 @@
-#include "stack.h"
+#include "../headers/stack.h"
 #include <iostream>
 
 // Реализация методов класса Stack
@@ -62,4 +62,3 @@ template class Stack<int>;
 template class Stack<char>;
 template class Stack<std::string>;
 template class Stack<bool>;
-#pragma clang diagnostic pop

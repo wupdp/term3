@@ -16,7 +16,7 @@ public:
     void set_name(const string& name);
 
     int get_age() const;
-    void set_age(int birth_year);
+    void set_age(int age);
 
     virtual void display_info() const;
     friend ostream& operator<<(ostream& os, const Person& person);

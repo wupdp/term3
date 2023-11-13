@@ -1,6 +1,5 @@
 #include <iostream>
-#include "stack.h"
-
+#include "headers/stack.h"
 
 int main() {
     Stack<int> stack;

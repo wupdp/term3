@@ -42,7 +42,7 @@ ostream& operator<<(ostream& os, const Teacher& teacher) {
 
     os << "Publications: ";
     for (const auto& publication : teacher.publications) {
-        os << publication << " ";
+        os << endl << "\t" <<publication;
     }
     os << endl;
     return os;

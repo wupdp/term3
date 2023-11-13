@@ -3,9 +3,11 @@
 
 int main() {
     PartyTeacher woman;
-    Person man;
+    Teacher man;
     man.set_name("Albert Einstein");
     man.set_age(145);
+    man.set_specialty("Theoretical physicist");
+    man.set_publications({"Folgerungen aus den Kapillaritätserscheinungen","Thermodynamische","Kinetische Theorie"});
 
     cout << man << endl;
 
@@ -17,7 +19,7 @@ int main() {
     woman.set_party_name(PARTY);
     woman.set_work(WORK);
 
-    std::cout << woman;
+    cout << woman;
 
     return 0;
 }
