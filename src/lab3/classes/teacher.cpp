@@ -35,9 +35,8 @@ void Teacher::display_info() const {
     }
 }
 
-ostream& operator<<(ostream& os, const Teacher& teacher) {
-    os << "Name: " << teacher.name << endl;
-    os << "Age: " << teacher.age << endl;
+ostream& operator<<(ostream& os, Teacher& teacher) {
+    os << dynamic_cast<Person&>(teacher);
     os << "Specialty: " << teacher.specialty << endl;
 
     os << "Publications: ";

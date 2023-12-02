@@ -31,19 +31,11 @@ string PartyTeacher::get_work() {
     return party_work;
 }
 
-ostream &operator<<(ostream &os, const PartyTeacher &partyTeacher) {
-    os << "Name: " << partyTeacher.name << endl;
-    os << "Age: " << partyTeacher.age << endl;
-    os << "Specialty: " << partyTeacher.specialty << endl;
-
-    os << "Publications: ";
-    for (const auto &publication: partyTeacher.publications) {
-        os << endl << "\t" << publication;
-    }
-    os << endl;
+ostream &operator<<(ostream &os,  PartyTeacher &partyTeacher) {
+    os << dynamic_cast<Teacher&>(partyTeacher);
     os << "Party Name: " << partyTeacher.party_name << endl;
     os << "Biography: ";
-    for (const auto &info: partyTeacher.biography) {
+    for (const string &info: partyTeacher.biography) {
         os << endl << "\t" << info;
     }
     os << endl;
@@ -56,4 +48,18 @@ ostream &operator<<(ostream &os, const PartyTeacher &partyTeacher) {
 PartyTeacher::~PartyTeacher() {
     biography.clear();
     publications.clear();
+}
+
+PartyTeacher::PartyTeacher(const Teacher& teacher) {
+    this->name = teacher.get_name();
+    this->specialty = teacher.get_specialty();
+    this->publications = teacher.get_publications();
+    this->age = teacher.get_age();
+}
+
+PartyTeacher::PartyTeacher(const PartyMember& member) {
+    this->party_name = member.get_party_name();
+    this->biography = member.get_biography();
+    this->name = member.get_name();
+    this->age = member.get_age();
 }

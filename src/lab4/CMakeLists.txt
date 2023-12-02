@@ -4,7 +4,7 @@ project(lab4)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(lab4 main.cpp
-        classes/stack.cpp
         headers/stack.h
-        classes/node.cpp
-        headers/node.h)
+        headers/menu.h
+        classes/stack.inl
+        classes/Menu.inl)

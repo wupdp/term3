@@ -33,9 +33,8 @@ void PartyMember::display_info() const {
     }
 }
 
-ostream& operator<<(ostream& os, const PartyMember& party_member) {
-    os << "Name: " << party_member.name << endl;
-    os << "Age: " << party_member.age << endl;
+ostream& operator<<(ostream& os, PartyMember& party_member) {
+    os << dynamic_cast<Person&>(party_member);
     os << "Party Name: " << party_member.party_name << endl;
     os << "Biography: ";
     for (const auto& info : party_member.biography) {

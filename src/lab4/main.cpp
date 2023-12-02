@@ -1,24 +1,11 @@
 #include <iostream>
 #include "headers/stack.h"
+#include "headers/menu.h"
 
 int main() {
-    Stack<int> stack;
-    if (stack.is_empty())
-        std::cout << "Stack is empty\n";
-    stack.push(0);
-    stack.push(-34);
-    stack.push(556);
-    stack.push(776);
-    if (!stack.is_empty())
-        std::cout << "Size: " <<stack.size() << std::endl;
-    if (!stack.is_empty())
-        std::cout << "Top data: " << stack.top() << std::endl;
-    stack.pop();
-    stack.pop();
-    stack.pop();
-    stack.pop();
-    stack.pop();
-    std::cout << "Size: " << stack.size() << std::endl;
+    Stack<int> stack_str;
+    Menu menu;
+    menu.start(stack_str);
 
     return 0;
 }

@@ -21,5 +21,5 @@ public:
     void set_publications(const vector<string>& publications);
 
     void display_info() const override;
-    friend ostream& operator<<(ostream& os, const Teacher& teacher);
+    friend ostream& operator<<(ostream& os, Teacher& teacher);
 };
