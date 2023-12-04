@@ -1,5 +1,3 @@
-#include "../headers/stack_exception.h"
-
 template <typename T>
 StackException<T>::StackException(StackErrorType type) : error_type(type) {
     switch (error_type) {

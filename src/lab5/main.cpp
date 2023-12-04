@@ -3,7 +3,7 @@
 #include "headers/menu.h"
 
 int main() {
-    Stack<std::string> stack_str;
+    Stack<int> stack_str;
     Menu menu;
     menu.start(stack_str);
 

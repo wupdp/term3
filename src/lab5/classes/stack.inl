@@ -12,28 +12,46 @@ Stack<T>::~Stack() {
 
 template<typename T>
 void Stack<T>::push(const T &value) {
-    auto newNode = new Node<T>(value);
-    newNode->next = top_node;
-    top_node = newNode;
+    try {
+        Node<T>* newNode = new Node<T>(value);
+        if (newNode == nullptr) {
+            throw StackException<T>("Memory allocation failed. Unable to push element onto the stack.");
+        }
+        newNode->next = top_node;
+        top_node = newNode;
+    } catch (const StackException<T>& e) {
+        std::cerr << "Exception caught: " << e.what() << std::endl;
+        throw; // Повторное выбрасывание исключения для обработки на уровне выше
+    }
 }
 
 template<typename T>
 void Stack<T>::pop() {
-    if (!is_empty()) {
-        Node<T> *temp = top_node;
-        top_node = top_node->next;
-        delete temp;
-    } else {
-        std::cerr << "Stack is empty. Cannot pop." << std::endl;
+    try {
+        if (!is_empty()) {
+            Node<T> *temp = top_node;
+            top_node = top_node->next;
+            delete temp;
+        } else {
+            throw StackException<T>("Stack is empty. Cannot pop.");
+        }
+    } catch (const StackException<T>& e) {
+        std::cerr << "Exception caught: " << e.what() << std::endl;
+        throw; // Повторное выбрасывание исключения для обработки на уровне выше
     }
 }
 
 template<typename T>
 T &Stack<T>::top() {
-    if (!is_empty()) {
-        return top_node->data;
-    } else {
-        throw std::out_of_range("Stack is empty. Cannot get top.");
+    try {
+        if (!is_empty()) {
+            return top_node->data;
+        } else {
+            throw StackException<T>("Stack is empty. Cannot get top.");
+        }
+    } catch (const StackException<T>& e) {
+        std::cerr << "Exception caught: " << e.what() << std::endl;
+        throw; // Повторное выбрасывание исключения для обработки на уровне выше
     }
 }
 
