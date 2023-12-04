@@ -70,3 +70,39 @@ bool Stack<T>::find_element(T element) {
     }
     return false;
 }
+
+template<typename T>
+void Stack<T>::sort() {
+    if (is_empty() || size() == 1) {
+        return;
+    }
+
+    bool swapped;
+    Node<T> *current;
+    Node<T> *temp = nullptr;
+    do {
+        swapped = false;
+        current = top_node;
+
+        while (current->next != temp) {
+            if (current->data > current->next->data) {
+                std::swap(current->data, current->next->data);
+                swapped = true;
+            }
+            current = current->next;
+        }
+        temp = current;
+    } while (swapped);
+}
+
+template<typename T>
+std::ostream &operator<<(std::ostream &os, const Stack<T> &stack) {
+    Node<T> *current = stack.top_node;
+
+    while (current != nullptr) {
+        os << current->data << " ";
+        current = current->next;
+    }
+
+    return os;
+}

@@ -40,12 +40,6 @@ void Menu::start(Stack<T> &stack) {
             continue;
         }
         else if (choice == 2) {
-            if (stack.is_empty() == 1) {
-                std::cout << "The stack is empty\n";
-                std::cin.get();
-                std::cin.get();
-                continue;
-            }
             std::cout << "The top element:" << stack.top() << std::endl;
             std::cin.get();
             std::cin.get();
@@ -53,12 +47,6 @@ void Menu::start(Stack<T> &stack) {
             continue;
         }
         else if (choice == 3) {
-            if (stack.is_empty() == 1) {
-                std::cout << "The stack is empty\n";
-                std::cin.get();
-                std::cin.get();
-                continue;
-            }
             stack.pop();
             std::cout << "The element was poped.\n";
             std::cin.get();
@@ -67,12 +55,6 @@ void Menu::start(Stack<T> &stack) {
             continue;
         }
         else if (choice == 4) {
-            if (stack.is_empty() == 1) {
-                std::cout << "The stack is empty\n";
-                std::cin.get();
-                std::cin.get();
-                continue;
-            }
             stack.clear();
             std::cout << "The stack was cleared\n";
             std::cin.get();
@@ -81,17 +63,11 @@ void Menu::start(Stack<T> &stack) {
             continue;
         }
         else if (choice == 5) {
-            if (stack.is_empty() == 1) {
-                std::cout << "The stack is empty\n";
-                std::cin.get();
-                std::cin.get();
-                continue;
-            }else {
                 std::cout << stack;
                 std::cin.get();
                 std::cin.get();
-            }
-            continue;
+
+                continue;
         }
         else if (choice == 6) {
             T element;

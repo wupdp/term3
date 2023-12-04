@@ -1,9 +1,6 @@
 #ifndef LAB4_MENU_H
 #define LAB4_MENU_H
 #include "stack.h"
-
-
-
 class Menu {
 private:
     int choice;
@@ -17,5 +14,5 @@ private:
     static void clear();
 };
 
-#endif //LAB4_MENU_H
 #include "../classes/Menu.inl"
+#endif //LAB4_MENU_H

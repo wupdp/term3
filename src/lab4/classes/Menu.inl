@@ -1,14 +1,15 @@
 #include "iostream"
 
 void Menu::top() {
-    std::cout << "\t\tMENU Stack-String\n"
-                 "\t1. Push string.\n"
-                 "\t2. Top string.\n"
-                 "\t3. Pop string.\n"
+    std::cout << "\t\tMENU Stack-Template\n"
+                 "\t1. Push element.\n"
+                 "\t2. Top element.\n"
+                 "\t3. Pop element.\n"
                  "\t4. Clear stack.\n"
-                 "\t5. Clear and show stack.\n"
+                 "\t5. Show stack.\n"
                  "\t6. Find element.\n"
-                 "\t7. Exit.\n";
+                 "\t7. Sort.\n"
+                 "\t8. Exit.\n";
     std::cin >> choice;
 }
 
@@ -28,17 +29,17 @@ void Menu::start(Stack<T> &stack) {
         clear();
         top();
         if (choice == 1) {
-            T str;
+            T element;
             std::cout << "Enter element:\n";
-            std::cin >> str;
-            stack.push(str);
+            std::cin >> element;
+            stack.push(element);
             std::cout << "Successfully!\n";
             std::cin.get();
             std::cin.get();
 
             continue;
         }
-        if (choice == 2) {
+        else if (choice == 2) {
             if (stack.is_empty() == 1) {
                 std::cout << "The stack is empty\n";
                 std::cin.get();
@@ -51,7 +52,7 @@ void Menu::start(Stack<T> &stack) {
 
             continue;
         }
-        if (choice == 3) {
+        else if (choice == 3) {
             if (stack.is_empty() == 1) {
                 std::cout << "The stack is empty\n";
                 std::cin.get();
@@ -65,7 +66,7 @@ void Menu::start(Stack<T> &stack) {
 
             continue;
         }
-        if (choice == 4) {
+        else if (choice == 4) {
             if (stack.is_empty() == 1) {
                 std::cout << "The stack is empty\n";
                 std::cin.get();
@@ -79,25 +80,20 @@ void Menu::start(Stack<T> &stack) {
 
             continue;
         }
-        if (choice == 5) {
+        else if (choice == 5) {
             if (stack.is_empty() == 1) {
                 std::cout << "The stack is empty\n";
                 std::cin.get();
                 std::cin.get();
                 continue;
+            }else {
+                std::cout << stack;
+                std::cin.get();
+                std::cin.get();
             }
-            while (stack.is_empty() == 0) {
-                std::cout << stack.top() << std::endl;
-                stack.pop();
-            }
-            stack.clear();
-            std::cout << "The stack was cleared\n";
-            std::cin.get();
-            std::cin.get();
-
             continue;
         }
-        if (choice == 6) {
+        else if (choice == 6) {
             T element;
             std::cout << "Enter the element to find\n";
             std::cin >> element;
@@ -108,7 +104,9 @@ void Menu::start(Stack<T> &stack) {
             std::cin.get();
             std::cin.get();
         }
-        if (choice == 7) {
+        else if (choice == 7) {
+            stack.sort();
+        }if (choice == 8) {
             choice = 0;
         }
     }

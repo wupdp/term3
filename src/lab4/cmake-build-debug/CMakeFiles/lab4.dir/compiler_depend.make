@@ -187,10 +187,10 @@ CMakeFiles/lab4.dir/main.cpp.o: /home/wupdp/Рабочий\ стол/С_СPP\ la
   /home/wupdp/Рабочий\ стол/С_СPP\ labs/CPP_labs/src/lab4/headers/stack.h \
   /home/wupdp/Рабочий\ стол/С_СPP\ labs/CPP_labs/src/lab4/classes/stack.inl \
   /home/wupdp/Рабочий\ стол/С_СPP\ labs/CPP_labs/src/lab4/headers/menu.h \
-  /home/wupdp/Рабочий\ стол/С_СPP\ labs/CPP_labs/src/lab4/classes/Menu.cpp
+  /home/wupdp/Рабочий\ стол/С_СPP\ labs/CPP_labs/src/lab4/classes/Menu.inl
 
 
-/home/wupdp/Рабочий\ стол/С_СPP\ labs/CPP_labs/src/lab4/classes/Menu.cpp:
+/home/wupdp/Рабочий\ стол/С_СPP\ labs/CPP_labs/src/lab4/classes/Menu.inl:
 
 /home/wupdp/Рабочий\ стол/С_СPP\ labs/CPP_labs/src/lab4/headers/menu.h:
 

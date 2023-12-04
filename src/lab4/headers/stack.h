@@ -24,6 +24,10 @@ public:
     [[nodiscard]] bool is_empty() const;
     [[nodiscard]] size_t size() const;
     bool find_element(T element);
+    void sort();
+
+    template <typename U>
+    friend std::ostream& operator<<(std::ostream& os, const Stack<U>& stack);
 };
 
 
