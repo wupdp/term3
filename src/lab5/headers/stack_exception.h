@@ -1,5 +1,6 @@
 #pragma once
 #include <stdexcept>
+#include <string>
 
 enum class StackErrorType {
     EMPTY_STACK,
@@ -7,7 +8,6 @@ enum class StackErrorType {
     INVALID_OPERATION
 };
 
-template <typename T>
 class StackException : public std::exception {
 private:
     std::string message;

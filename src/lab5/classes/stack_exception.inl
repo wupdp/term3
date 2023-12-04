@@ -1,6 +1,5 @@
-template <typename T>
-StackException<T>::StackException(StackErrorType type) : error_type(type) {
-    switch (error_type) {
+StackException::StackException(StackErrorType type) : error_type(type) {
+    switch (type) {
         case StackErrorType::EMPTY_STACK:
             message = "Stack is empty. Cannot perform operation.";
             break;
@@ -16,7 +15,6 @@ StackException<T>::StackException(StackErrorType type) : error_type(type) {
     }
 }
 
-template <typename T>
-const char* StackException<T>::what() const noexcept {
+const char* StackException::what() const noexcept {
     return message.c_str();
 }

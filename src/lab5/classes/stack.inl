@@ -15,11 +15,11 @@ void Stack<T>::push(const T &value) {
     try {
         Node<T>* newNode = new Node<T>(value);
         if (newNode == nullptr) {
-            throw StackException<T>("Memory allocation failed. Unable to push element onto the stack.");
+            throw StackException(StackErrorType::MEMORY_ALLOCATION_FAILED);
         }
         newNode->next = top_node;
         top_node = newNode;
-    } catch (const StackException<T>& e) {
+    } catch (const StackException& e) {
         std::cerr << "Exception caught: " << e.what() << std::endl;
         throw; // Повторное выбрасывание исключения для обработки на уровне выше
     }
@@ -33,9 +33,9 @@ void Stack<T>::pop() {
             top_node = top_node->next;
             delete temp;
         } else {
-            throw StackException<T>("Stack is empty. Cannot pop.");
+            throw StackException(StackErrorType::EMPTY_STACK);
         }
-    } catch (const StackException<T>& e) {
+    } catch (const StackException& e) {
         std::cerr << "Exception caught: " << e.what() << std::endl;
         throw; // Повторное выбрасывание исключения для обработки на уровне выше
     }
@@ -47,9 +47,9 @@ T &Stack<T>::top() {
         if (!is_empty()) {
             return top_node->data;
         } else {
-            throw StackException<T>("Stack is empty. Cannot get top.");
+            throw StackException(StackErrorType::EMPTY_STACK);
         }
-    } catch (const StackException<T>& e) {
+    } catch (const StackException& e) {
         std::cerr << "Exception caught: " << e.what() << std::endl;
         throw; // Повторное выбрасывание исключения для обработки на уровне выше
     }
