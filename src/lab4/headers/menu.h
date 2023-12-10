@@ -1,6 +1,7 @@
 #ifndef LAB4_MENU_H
 #define LAB4_MENU_H
 #include "stack.h"
+
 class Menu {
 private:
     int choice;

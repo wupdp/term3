@@ -4,9 +4,8 @@ project(lab4)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(lab4 main.cpp
-        headers/stack.h
-        headers/menu.h
-        classes/stack.inl
-        classes/Menu.inl
-        classes/stack_exception.inl
-        headers/stack_exception.h)
+        classes/input_exc.cpp
+        classes/Exception.cpp
+        headers/Exception.h
+        headers/input_exc.h
+)
