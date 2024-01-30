@@ -1,11 +1,7 @@
-#include <iostream>
-#include "headers/stack.h"
-#include "headers/menu.h"
+#include "include/Interface.h"
 
-int main() {
-    Stack<int> stack_str;
-    Menu menu;
-    menu.start(stack_str);
-
+int main() { 
+    Interface();
     return 0;
 }
+

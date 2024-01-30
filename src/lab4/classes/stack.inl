@@ -29,7 +29,7 @@ void Stack<T>::pop() {
 }
 
 template<typename T>
-T &Stack<T>::top() {
+T& Stack<T>::top() {
     if (!is_empty()) {
         return top_node->data;
     } else {
